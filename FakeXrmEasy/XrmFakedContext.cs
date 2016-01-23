@@ -99,16 +99,33 @@ namespace FakeXrmEasy
             var fakedService = A.Fake<IOrganizationService>();
 
             //Fake CRUD methods
-            FakeRetrieve(context, fakedService);
-            FakeCreate(context, fakedService);
-            FakeUpdate(context, fakedService);
-            FakeDelete(context, fakedService);
-            
-            //Fake / Intercept Retrieve Multiple Requests
-            FakeRetrieveMultiple(context, fakedService);
+            if (!UsesIntegration) {
+                FakeRetrieve(context, fakedService);
+                FakeRetrieve(context, fakedService);
+                FakeCreate(context, fakedService);
+                FakeUpdate(context, fakedService);
+                FakeDelete(context, fakedService);
 
-            //Fake / Intercept other requests
-            FakeExecute(context, fakedService);
+                //Fake / Intercept Retrieve Multiple Requests
+                FakeRetrieveMultiple(context, fakedService);
+
+                //Fake / Intercept other requests
+                FakeExecute(context, fakedService);
+            } 
+            else
+            {
+                FakeRetrieveIntegration(context, fakedService);
+                FakeRetrieveIntegration(context, fakedService);
+                FakeCreateIntegration(context, fakedService);
+                FakeUpdateIntegration(context, fakedService);
+                FakeDeleteIntegration(context, fakedService);
+
+                //Fake / Intercept Retrieve Multiple Requests
+                FakeRetrieveMultipleIntegration(context, fakedService);
+
+                //Fake / Intercept other requests
+                FakeExecuteIntegration(context, fakedService);
+            }
 
             return fakedService;
         }
