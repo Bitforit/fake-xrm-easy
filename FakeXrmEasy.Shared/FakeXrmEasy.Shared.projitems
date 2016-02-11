@@ -18,7 +18,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)FakeMessageExecutors\SetStateRequestExecutor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FakeMessageExecutors\UpdateRequestExecutor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FakeMessageExecutors\WhoAmIRequestExecutor.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Integration\XrmFakedContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\XrmFakedContext.Sync.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Integration\XrmFakedContext.Crud.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IXrmFakedContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OrganizationFaults\OrganizationServiceFaultQueryBuilderNoAttribute.cs" />
