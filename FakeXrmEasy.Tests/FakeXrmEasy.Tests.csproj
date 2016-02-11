@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\xunit.runner.visualstudio.2.1.0\build\net20\xunit.runner.visualstudio.props" Condition="Exists('..\packages\xunit.runner.visualstudio.2.1.0\build\net20\xunit.runner.visualstudio.props')" />
   <UsingTask AssemblyFile="..\packages\xunit.runners.1.9.2\tools\xunit.runner.msbuild.dll" TaskName="Xunit.Runner.MSBuild.xunit" />
   <PropertyGroup>
@@ -72,46 +72,11 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="CodeActivitiesForTesting\AddActivityWithConstant.cs" />
-    <Compile Include="CodeActivitiesForTesting\AddActivity.cs" />
-    <Compile Include="CodeActivitiesForTesting\CreateTaskActivity.cs" />
-    <Compile Include="FakeContextTests\FakeContextMockTests.cs" />
-    <Compile Include="FakeContextTests\FakeContextTestCodeActivities.cs" />
-    <Compile Include="FakeContextTests\FakeContextTestCreateQuery.cs" />
-    <Compile Include="FakeContextTests\FakeContextTestDelete.cs" />
-    <Compile Include="FakeContextTests\FakeTracingServiceTests.cs" />
-    <Compile Include="FakeContextTests\LinqTests\EqualityWithDifferentDataTypesTests.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="FakeContextTests\LinqTests\FakeContextTestLinqQueries.cs" />
-    <Compile Include="FakeContextTests\FakeContextTestPlugins.cs" />
-    <Compile Include="FakeContextTests\LinqTests\MetadataInferenceTests.cs" />
-    <Compile Include="FakeContextTests\QueryByAttribute\QueryByAttributeTests.cs" />
-    <Compile Include="FakeContextTests\RetrieveAttributeRequestTests\RetrieveAttributeRequestTests.cs" />
-    <Compile Include="FakeContextTests\TranslateQueryExpressionTests\ConditionExpressionTests.cs" />
-    <Compile Include="FakeContextTests\TranslateQueryExpressionTests\FakeContextTestTranslateQueryExpression.cs" />
-    <Compile Include="FakeContextTests\FakeContextTestUpdate.cs" />
-    <Compile Include="FakeContextTests\FakeContextTestCreate.cs" />
-    <Compile Include="FakeContextTests\FakeContextTestRetrieve.cs" />
-    <Compile Include="FakeContextTests\FakeContextTests.cs" />
-    <Compile Include="FakeContextTests\TranslateQueryExpressionTests\FilterExpressionTests.cs" />
-    <Compile Include="FakeContextTests\WhoAmIRequest\WhoAmITests.cs" />
-    <Compile Include="GeneratedCode.cs" />
-    <Compile Include="PluginsForTesting\AccountNumberPlugin.cs" />
-    <Compile Include="PluginsForTesting\ConfigurationPlugin.cs" />
-    <Compile Include="PluginsForTesting\CustomMockPlugin.cs" />
-    <Compile Include="PluginsForTesting\FollowupPlugin.cs" />
-    <Compile Include="PluginsForTesting\InheritedPlugin.cs" />
-    <Compile Include="PluginsForTesting\RetrieveServicesPlugin.cs" />
-    <Compile Include="PluginsForTesting\TestContextPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="buildNugetPackages.bat" />
     <None Include="build\FakeXrmEasy.1.0.0.nupkg" />
-    <None Include="build\FakeXrmEasy.1.2.0.nupkg" />
-    <None Include="build\FakeXrmEasy.1.2.1-alpha.nupkg" />
-    <None Include="build\FakeXrmEasy.1.2.4-alpha.nupkg" />
     <None Include="build\FakeXrmEasy.dll.nuspec" />
     <None Include="build\tools\Install.ps1" />
     <None Include="packages.config" />
@@ -127,6 +92,7 @@
     <Content Include="build\nuget.exe" />
   </ItemGroup>
   <ItemGroup />
+  <Import Project="..\FakeXrmEasy.Tests.Shared\FakeXrmEasy.Tests.Shared.projitems" Label="Shared" />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
@@ -168,4 +134,5 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\xunit.runner.visualstudio.2.1.0\build\net20\xunit.runner.visualstudio.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.runner.visualstudio.2.1.0\build\net20\xunit.runner.visualstudio.props'))" />
   </Target>
+  <ItemGroup />
 </Project>
