@@ -23,7 +23,7 @@ namespace FakeXrmEasy
         /// <summary>
         /// Syncs a list of entities In Memory with a real Organization database.
         /// When the context is running in Integration mode, it will call Sync to synchronize the entities passed to the Initialize
-        /// method, so that tests will have the required records in the destination environment
+        /// method, so that tests will have the required records in the destination environment before test execution
         /// </summary>
         protected void Sync(IOrganizationService realService)
         {
